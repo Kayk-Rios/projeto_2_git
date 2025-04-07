@@ -14,7 +14,7 @@ export function PerfilUsuario({ user }: PerfilUsuarioProps) {
         <img
           src={user.avatar_url}
           alt={user.name}
-          className="w-24 h-24 rounded-full object-cover"
+          className="w-24 h-24 rounded-full object-cover border-2 border-blue-500"
         />
         <div>
           <h2 className="text-xl font-bold text-blue-500 hover:underline">
