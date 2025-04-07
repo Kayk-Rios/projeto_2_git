@@ -1,5 +1,8 @@
 # 🚀 Buscador de Perfil GitHub
 
+Link do projeto em deploy: https://buscador-git.netlify.app/ 
+
+
 Uma aplicação React que permite buscar e visualizar perfis do GitHub
 
 ## 📝 Sobre o Projeto
