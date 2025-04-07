@@ -3,6 +3,7 @@ import { Cabecalho } from "./components/Cabecalho";
 import { FormularioBusca } from "./components/FormularioBusca";
 import { Carregando } from "./components/Carregando";
 import { MensagemErro } from "./components/MensagemErro";
+import { PerfilUsuario } from "./components/PerfilUsuario";
 
 
 
@@ -51,9 +52,10 @@ function App() {
         onSubmit={handleSearch}
       />
    {isLoading && <Carregando />}
-   
+
    {error && !isLoading && <MensagemErro message={error} />}
       
+   {user && !isLoading && <PerfilUsuario user={user} />}
 
     </div>
   );
