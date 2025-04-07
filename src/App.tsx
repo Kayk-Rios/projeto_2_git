@@ -11,13 +11,33 @@ interface GitHubUser {
   name: string;
 }
 function App() {
+  const [user, setUser] = useState<GitHubUser | null>(null);
   const [username, setUsername] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-
+  const [error, setError] = useState('');
   
 
   
-  
+  const handleSearch = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    setIsLoading(true);
+    
+    try {
+      const response = await fetch(`https://api.github.com/users/${username}`);
+      if (!response.ok) {
+        throw new Error(' Nenhum perfil foi encontrado com ese nome de usuário.Tente novamente ');
+      }
+      const data = await response.json();
+      setUser(data);
+    } catch (err) {
+      setError(' Nenhum perfil foi encontrado com ese nome de usuário.Tente novamente');
+      setUser(null);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center pt-10">
       <Cabecalho />
@@ -26,7 +46,7 @@ function App() {
         username={username}
         isLoading={isLoading}
         onUsernameChange={setUsername}
-        
+        onSubmit={handleSearch}
       />
 
 
