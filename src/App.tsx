@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Cabecalho } from "./components/Cabecalho";
 import { FormularioBusca } from "./components/FormularioBusca";
+import { Carregando } from "./components/Carregando";
 
 
 
@@ -48,7 +49,7 @@ function App() {
         onUsernameChange={setUsername}
         onSubmit={handleSearch}
       />
-
+   {isLoading && <Carregando />}
 
     </div>
   );
