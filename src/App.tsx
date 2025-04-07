@@ -29,12 +29,12 @@ function App() {
     try {
       const response = await fetch(`https://api.github.com/users/${username}`);
       if (!response.ok) {
-        throw new Error(' Nenhum perfil foi encontrado com ese nome de usuário.Tente novamente ');
+        throw new Error(' Nenhum perfil foi encontrado com esse nome de usuário.Tente novamente ');
       }
       const data = await response.json();
       setUser(data);
     } catch (err) {
-      setError(' Nenhum perfil foi encontrado com ese nome de usuário.Tente novamente');
+      setError(' Nenhum perfil foi encontrado com esse nome de usuário.Tente novamente');
       setUser(null);
     } finally {
       setIsLoading(false);
