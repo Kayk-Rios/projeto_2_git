@@ -9,7 +9,7 @@ interface PerfilUsuarioProps {
 
 export function PerfilUsuario({ user }: PerfilUsuarioProps) {
   return (
-    <div className="bg-gray-800 rounded-lg p-6 max-w-md w-full">
+    <div className="bg-white rounded-lg p-6 max-w-xl w-full m-3">
       <div className="flex items-start gap-4">
         <img
           src={user.avatar_url}
@@ -22,7 +22,7 @@ export function PerfilUsuario({ user }: PerfilUsuarioProps) {
               {user.name || user.login}
             </a>
           </h2>
-          <p className="text-gray-300 mt-2">{user.bio || 'Sem biografia disponível'}</p>
+          <p className="text-gray-500 mt-2">{user.bio || 'Sem biografia disponível'}</p>
         </div>
       </div>
     </div>
