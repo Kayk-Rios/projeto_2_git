@@ -42,22 +42,34 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center pt-10">
-      <Cabecalho />
 
-       <FormularioBusca
+    <>
+<div className="relative h-screen w-screen overflow-hidden bg">
+  <div className="absolute inset-0 z-0">
+    <div className="w-[700px] h-[700px] bg-blue-900 opacity-80 blur-[70px] rounded-full absolute left-1/2 top-1/2 animate-[floatBlue_18s_ease-in-out_infinite]" />
+
+    <div className="w-[700px] h-[700px] bg-blue-900 opacity-80 blur-[70px] rounded-full absolute left-1/2 top-1/2 animate-[floatPurple_22s_ease-in-out_infinite]" />
+  </div>
+
+  <div className="relative z-10 flex justify-center items-center h-full">
+    <div className="rounded-sm w-[800px] h-[500px] bg-black text-white flex flex-col items-center pt-10">
+      <Cabecalho />
+      <FormularioBusca
         username={username}
         isLoading={isLoading}
         onUsernameChange={setUsername}
         onSubmit={handleSearch}
       />
-   {isLoading && <Carregando />}
-
-   {error && !isLoading && <MensagemErro message={error} />}
-      
-   {user && !isLoading && <PerfilUsuario user={user} />}
-
+      {isLoading && <Carregando />}
+      {error && !isLoading && <MensagemErro message={error} />}
+      {user && !isLoading && <PerfilUsuario user={user} />}
     </div>
+  </div>
+</div>
+
+
+
+    </>
   );
 }
 
